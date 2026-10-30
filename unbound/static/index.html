@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>UNBOUND · Innovation Engine</title>
+    <link rel="stylesheet" href="/static/style.css" />
+    <script defer src="/static/app.js"></script>
+  </head>
+  <body>
+    <main>
+      <header>
+        <span class="eyebrow">UNBOUND / v3.0</span>
+        <h1>Make room for the unexpected.</h1>
+        <p>
+          Independent creative workers. Connected mechanisms. Evidence-qualified
+          decisions.
+        </p>
+        <div id="provider" role="status">Checking provider…</div>
+      </header>
+      <section class="compose">
+        <h2>Explore a possibility</h2>
+        <form id="run-form">
+          <label for="input">Your topic, problem, or creative brief</label
+          ><textarea
+            id="input"
+            minlength="3"
+            maxlength="20000"
+            required
+            placeholder="What could a neighborhood library become if it shared capabilities instead of books?"
+          ></textarea>
+          <div class="controls">
+            <label
+              >Execution mode<select id="mode">
+                <option>AUTO</option>
+                <option>GENERAL</option>
+                <option>VENTURE</option>
+                <option>HYBRID</option>
+              </select></label
+            ><label
+              >Research<select id="research">
+                <option>AUTO</option>
+                <option>ENABLED</option>
+                <option>DISABLED</option>
+              </select></label
+            ><button id="start" type="submit">Start Run ↗</button>
+          </div>
+        </form>
+        <p class="hint">
+          35+ ideas · 5 wildcards · 5 hybrids · 3 meta-hybrids · 5 finalists.
+          Experiments are proposed, never automatically executed.
+        </p>
+      </section>
+      <section id="progress" hidden aria-live="polite">
+        <div class="section-title">
+          <h2>Execution</h2>
+          <button id="refresh">Refresh</button>
+        </div>
+        <p id="run-meta"></p>
+        <ol id="phases"></ol>
+        <h3>Creative worker activity</h3>
+        <div id="workers"></div>
+        <p id="error" role="alert"></p>
+        <button id="retry" hidden>Retry from checkpoint</button>
+      </section>
+      <section id="results" hidden>
+        <div class="section-title">
+          <h2>Innovation report</h2>
+          <nav><a id="json">Export JSON</a><a id="md">Export Markdown</a></nav>
+        </div>
+        <p id="result-note"></p>
+        <div id="report"></div>
+      </section>
+      <section>
+        <h2>Execution history</h2>
+        <div id="history">Loading…</div>
+      </section>
+      <p id="notice" role="alert"></p>
+      <footer>
+        Concept quality is distinct from evidence and predicted outcomes. No
+        claim of global novelty.
+      </footer>
+    </main>
+  </body>
+</html>

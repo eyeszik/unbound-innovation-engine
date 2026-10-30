@@ -1,0 +1,5 @@
+# Replace with an owned hostname pointed at the persistent server.
+innovation.example.com {
+    # Preserve Host for the API's same-origin mutation check.
+    reverse_proxy 127.0.0.1:8000
+}

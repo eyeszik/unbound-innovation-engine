@@ -1,0 +1,21 @@
+[Unit]
+Description=UNBOUND durable orchestration worker
+After=network-online.target
+Wants=network-online.target
+[Service]
+User=unbound
+Group=unbound
+WorkingDirectory=/opt/unbound
+EnvironmentFile=/etc/unbound/environment
+ExecStart=/opt/unbound/.venv/bin/python -m unbound.worker
+Restart=on-failure
+RestartSec=5
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/unbound
+TimeoutStopSec=30
+[Install]
+WantedBy=multi-user.target
